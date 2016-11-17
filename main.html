@@ -1,0 +1,56 @@
+<div>
+	<br>
+	<form name="request_form" ng-submit="search(request_form)">
+		<div class="labels">
+			<label for="title" class="label">Title</label>
+			<label for="description" class="label">Description</label>
+			<label for="category" class="label">Category</label>
+			<label for="actor" class="label">Actor</label>
+			<label for="language" class="label">Language</label>
+		</div>
+		<div class="data">
+			<input type="text" name="title" placeholder="Title" ng-model="search.title">
+			<input type="text" name="description" placeholder="Description" ng-model="search.description">
+			<input type="text" name="category" placeholder="Category" ng-model="search.category">
+			<input type="text" name="actor" placeholder="Actor Name" ng-model="search.actor">
+			<input type="text" name="language" placeholder="Language" ng-model="search.language">
+		</div>
+		<br>
+		<div clas="labels">
+			<label class="label">Actor</label>
+			<label class="label">Category</label>
+			<label class="label">Language</label>
+		</div>
+		<div>
+			<select class="selection" ng-options="actor.name for actor in actors" ng-model="actorSelected"></select>
+			<select class="selection" ng-options="category.name for category in categories" ng-model="categorySelected"></select>
+			<select class="selection" ng-options="language.name for language in languages" ng-model="languageSelected"></select>
+		</div>
+		<div>
+			<input type="submit" name="request">
+		</div>
+	</form>
+	<br><br>
+
+	<div class="next-prev">
+		<button type="button" class="prev" ng-click="prev()">Previous</button>
+		<button type="button" class="next" ng-click="next()">Next</button>
+	</div>
+	<div class="clear"></div>
+	<br>
+	<div  class="initial_data" ng-repeat="film in films">
+		<span class="label">{{film.title}}</span>
+		<span class="label">{{film.description}}</span>
+		<span class="label">{{film.category}}</span>
+		<span class="label">{{film.release_year}}</span>
+		<span class="label">{{film.language}}</span>
+		<span class="label">{{film.lenth}}</span>
+		<span class="label">{{film.rating}}</span>
+		<span class="label">{{film.actor_names}}</span>
+	</div>
+	<div class="next-prev">
+		<button class="prev" ng-click="prev()">Previous</button>
+		<button class="next" ng-click="next()">Next</button>
+	</div>
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="fbTester">
+    
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        <script src="//connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+        <!--script src="ngFacebook.js" type="text/javascript"></script-->
+        <script src="app.js"></script>
+        <script src="demoCntr.js" type="text/javascript"></script>
+        <script src="mainCntr.js" type="text/javascript"></script>
+    </head>
+    
+    <body ng-controller="demoCtrl" ng-cloak>
+        <h1>Facebook login test</h1>
+        <div>
+            <h2>Login</h2>
+            <!--button id="login-btn" ng-click="loginToggle()">
+                <span ng-if="status">Logout</span>
+                <span ng-if="!status">Login</span>
+            </button>
+            <span ng-if="status" class="message">
+                You are <strong>Logged in</strong> as <em>{{user.name}}</em>
+            </span>
+            <span ng-if="!status" class="message">
+                You are <strong>not</strong> logged in.
+            </span-->
+            <br>
+            <div>
+                <button ng-click="fbLogin()">Facebook login</button>
+                <br><br>
+                <button ng-click="home()">Home</button>
+                <button ng-click="check()">Check</button>
+            </div>
+        </div>
+        <div id="content" ng-view></div>
+    </body>
+</html>
